@@ -17,7 +17,7 @@ char* const container_args[] = {
 int container_main(void* arg){
     printf("Container-inside the container!\n");
     printf("Container [%5d] - inside the container!\n", getpid());
-    sethostname("container", 10)
+    sethostname("container", 10);
     execv(container_args[0], container_args);
     printf("Sometthind is wrong!\n");
     return 1;
