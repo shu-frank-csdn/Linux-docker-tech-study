@@ -3,7 +3,7 @@ README
 该文件是用来描述关于Linux namespaces 用法，更好的理解docker是如何应用linux kernal的namespaces去实现的虚拟化技术， reference http://coolshell.cn/articles/17010.html
 #简介
 Linux Namespace是Linux提供的一种内核级别环境隔离的方法。Linux namespaces有以下几种：
-![image](https://github.com/shu-frank-csdn/Linux-namespaces-study/blob/master/linux-namespaces.png)
+![image](https://github.com/shu-frank-csdn/Linux-docker-tech-study/blob/master/namespaces/linux-namespaces.png)
 
 主要是三个系统调用：
 
