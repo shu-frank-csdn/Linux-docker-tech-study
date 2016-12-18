@@ -16,6 +16,8 @@ char* const container_args[] = {
 
 int container_main(void* arg){
     printf("Container-inside the container!\n");
+    printf("Container [%5d] - inside the container!\n", getpid());
+    sethostname("container", 10)
     execv(container_args[0], container_args);
     printf("Sometthind is wrong!\n");
     return 1;
@@ -23,7 +25,7 @@ int container_main(void* arg){
 
 int main(){
     printf("Parent-start a container!\n");
-    int flags = SIGCHLD | CLONE_NEWPID;
+    int flags = SIGCHLD | CLONE_NEWPID | CLONE_NEWUTS;
     int container_pid = clone(container_main, container_stack + STACK_SIZE, flags, NULL);
     waitpid(container_pid, NULL, 0);
     printf("Parent - container stopped!\n");
