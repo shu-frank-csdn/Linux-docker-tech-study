@@ -34,6 +34,11 @@ mkdir -p /tmp/aufs/layer3
 umount /tmp/aufs/root
 mount -t aufs -o br=/tmp/aufs/layer3:/tmp/aufs/layer2:/tmp/aufs/layer1:/tmp/aufs/root none /tmp/aufs/root
 ```
+再对/tmp/aufs/root/修改：
+```
+echo 'layer3' > /tmp/aufs/root/layer3.txt
+echo 'layer3' > /tmp/aufs/root/common.txt
+```
 #Docker host file structure
 镜像的存储结构主要分两部分，一是镜像ID之间的关联，一是镜像ID与镜像名称之间的关联，前者的结构体叫Graph，后者叫TagStore.
 - /var/lib/graph/<image id> 下面没有layer目录，只有每个镜像的json描述文件和layersize大小
