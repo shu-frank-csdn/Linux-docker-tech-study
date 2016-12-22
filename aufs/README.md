@@ -39,6 +39,7 @@ mount -t aufs -o br=/tmp/aufs/layer3:/tmp/aufs/layer2:/tmp/aufs/layer1:/tmp/aufs
 echo 'layer3' > /tmp/aufs/root/layer3.txt
 echo 'layer3' > /tmp/aufs/root/common.txt
 ```
+这时候看/tmp/aufs/layer3目录,应该看到会有这两个文件,我们就可以把这个目录打个包实现Commit的目的,把这样的每一层保存下来,并想办法记录他们之间的关系(某一层的上层和下层是谁),这样就差不多实现了image的分层存储。
 #Docker host file structure
 镜像的存储结构主要分两部分，一是镜像ID之间的关联，一是镜像ID与镜像名称之间的关联，前者的结构体叫Graph，后者叫TagStore.
 - /var/lib/graph/<image id> 下面没有layer目录，只有每个镜像的json描述文件和layersize大小
