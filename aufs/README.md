@@ -18,10 +18,8 @@ mkdir -p /tmp/aufs/layer2
 echo 'root' > /tmp/aufs/root/root.txt
 echo 'layer1' > /tmp/aufs/layer1/layer1.txt
 echo 'layer2' > /tmp/aufs/layer2/layer2.txt
-
-echo 'root' > /tmp/aufs/root/common.txt
-echo 'layer1' > /tmp/aufs/root/common.txt
-echo 'layer2' > /tmp/aufs/root/common.txt
+echo 'layer1, common' > /tmp/aufs/layer1/common.txt
+echo 'layer2, common' > /tmp/aufs/layer2/common.txt
 ```
 按照顺序mount起来，br后面的参数顺序越后面越底层：
 ```
