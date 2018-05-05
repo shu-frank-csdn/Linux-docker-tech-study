@@ -38,5 +38,3 @@ ls /sys/fs/cgroup/cpu/docker/
 5f4d64a87f33373634ab1dc70a67842531955c1a02285f3549b436140dcc054f  cgroup.procs          cpu.stat
 7fb27b0783e10562e0c7008e2c08286688ede8a3fcbe6272b9873e8c5c289653  cpu.cfs_period_us     d0349b6027581944a49d0ddccc21480b84dfb31da3791f7b20abaed939859f25
 ```
-
-cgroup.clone_children                                             cpu.cfs_quota_us  
